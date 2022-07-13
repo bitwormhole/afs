@@ -8,23 +8,23 @@ type Path interface {
 
 	GetChild(name string) Path
 
-	GetName() string
-
 	String() string
 
-	Length() int64
+	GetName() string
 
-	Mkdir() error
+	GetInfo() FileInfo
 
-	Mkdirs() error
+	GetIO() FileIO
+
+	Mkdir(op Options) error
+
+	Mkdirs(op Options) error
 
 	Delete() error
 
-	List() []string
+	ListNames() []string
 
-	Exists() bool
+	ListPaths() []string
 
-	IsFile() bool
-
-	IsDirectory() bool
+	ListChildren() []Path
 }

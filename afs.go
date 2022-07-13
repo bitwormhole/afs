@@ -8,7 +8,7 @@ type FS interface {
 
 	ListRoots() []Path
 
-	CreateTempFile(prefix, suffix string, dir Path) Path
+	CreateTempFile(prefix, suffix string, dir Path) (Path, error)
 
 	// PathSeparator return ';'(windows) | ':'(unix)
 	PathSeparator() string
